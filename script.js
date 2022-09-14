@@ -35,7 +35,7 @@ const typeController = (e) => {
 
   // if it is not a valid character like Control/Alt then skip displaying anything
   if (!validLetters.includes(newLetter)) {
-    return ;
+    return;
   }
 
   userText += newLetter;
@@ -64,7 +64,7 @@ const validate = (key) => {
 
 // FINISHED TYPING
 const gameOver = () => {
-  
+
   document.removeEventListener("keydown", typeController);
   // the current time is the finish time
   // so total time taken is current time - start time
@@ -118,7 +118,7 @@ const start = () => {
       countdownOverlay.style.display = "flex";
       display.classList.remove("inactive");
       countdownOverlay.style.display = "none";
-    
+
       clearInterval(startCountdown);
       startTime = new Date().getTime();
     }
@@ -136,7 +136,7 @@ displayHistory();
 // Show typing time spent
 setInterval(() => {
   const currentTime = new Date().getTime();
-  const timeSpent = Math.floor((currentTime - startTime) / 1000) ;
+  const timeSpent = Math.floor((currentTime - startTime) / 1000);
 
 
   document.getElementById("show-time").innerHTML = `${startTime ? timeSpent : 0} seconds`;
