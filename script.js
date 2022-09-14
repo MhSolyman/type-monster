@@ -106,7 +106,7 @@ const start = () => {
   if (startTime) return;
 
   let count = 3;
-  
+
   countdownOverlay.style.display = "flex";
 
   const startCountdown = setInterval(() => {
@@ -121,14 +121,14 @@ const start = () => {
       clearInterval(startCountdown);
       startTime = new Date().getTime();
       countdownOverlay.style.display = "none";
-      
-     
+
+
     }
-    
+
     count--;
-   if(count==0){
-    count=''
-   }
+    if (count == 0) {
+      count = ''
+    }
   }, 1000);
 };
 
