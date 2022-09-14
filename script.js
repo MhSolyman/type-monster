@@ -106,6 +106,7 @@ const start = () => {
   if (startTime) return;
 
   let count = 3;
+  
   countdownOverlay.style.display = "flex";
 
   const startCountdown = setInterval(() => {
@@ -117,12 +118,17 @@ const start = () => {
       document.addEventListener("keydown", typeController);
       countdownOverlay.style.display = "flex";
       display.classList.remove("inactive");
-      countdownOverlay.style.display = "none";
-
       clearInterval(startCountdown);
       startTime = new Date().getTime();
+      countdownOverlay.style.display = "none";
+      
+     
     }
+    
     count--;
+   if(count==0){
+    count=''
+   }
   }, 1000);
 };
 
